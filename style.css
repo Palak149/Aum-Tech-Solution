@@ -1,0 +1,689 @@
+/* Basic Reset & Body Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden; /* Prevent horizontal scrollbar */
+    scroll-behavior: smooth;
+    position: relative;
+    min-height: 100vh; /* Ensure body takes full height for background */
+    transition: background-color 0.5s ease, color 0.5s ease; /* Smooth transition for theme change */
+}
+
+/* Dark Theme Default */
+body.dark-theme {
+    background-color: #0a0a0a;
+    color: #e0e0e0;
+}
+
+body.dark-theme .navbar {
+    background-color: rgba(15, 23, 42, 0.8);
+    border: 1px solid rgba(75, 85, 99, 0.7);
+}
+
+body.dark-theme .navbar ul li a:hover {
+    color: #60a5fa;
+}
+
+body.dark-theme section {
+    background-color: rgba(15, 23, 42, 0.7);
+    border: 1px solid rgba(75, 85, 99, 0.7);
+}
+
+body.dark-theme .service-card {
+    background-color: #1f2937;
+    border: 1px solid #4b5563;
+}
+
+body.dark-theme .service-card p {
+    color: #9ca3af;
+}
+
+body.dark-theme #contact form input,
+body.dark-theme #contact form textarea {
+    background-color: #4b5563;
+    border: 1px solid #4b5563;
+    color: #e0e0e0; /* Input text color in dark theme */
+}
+
+body.dark-theme #contact form input::placeholder,
+body.dark-theme #contact form textarea::placeholder {
+    color: #9ca3af;
+}
+
+body.dark-theme #contact form input:focus,
+body.dark-theme #contact form textarea:focus {
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.5);
+}
+
+body.dark-theme footer {
+    color: #6b7280;
+}
+
+/* Light Theme */
+body.light-theme {
+    background-color: #f0f2f5; /* Light background */
+    color: #333; /* Darker text */
+}
+
+body.light-theme .animated-background {
+    filter: blur(2px) brightness(1.2); /* Adjust blur and brightness for light theme */
+    opacity: 0.5;
+    background: linear-gradient(45deg, #e0e0e0, #f8f8f8, #e0e0e0, #f8f8f8);
+    background-size: 400% 400%;
+}
+
+body.light-theme .overlay {
+    background: rgba(255, 255, 255, 0.6); /* Lighter overlay */
+}
+
+body.light-theme .navbar {
+    background-color: rgba(255, 255, 255, 0.9); /* White with opacity */
+    border: 1px solid rgba(200, 200, 200, 0.7);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+body.light-theme .navbar ul li a {
+    color: #333;
+}
+
+body.light-theme .navbar ul li a:hover {
+    color: #1e40af; /* Darker blue hover */
+}
+
+body.light-theme section {
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(200, 200, 200, 0.7);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+body.light-theme h1 {
+    background: linear-gradient(to right, #1e40af, #6b21a8); /* Darker blue to purple */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+body.light-theme #home p {
+    color: #555;
+}
+
+body.light-theme #home .location-info {
+    color: #777;
+}
+
+body.light-theme #home .location-info span:first-child svg {
+    color: #1e40af; /* Darker blue */
+}
+
+body.light-theme #home .location-info span:last-child svg {
+    color: #6b21a8; /* Darker purple */
+}
+
+body.light-theme h2 {
+    background: linear-gradient(to right, #16a34a, #0d9488); /* Darker green to teal */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+body.light-theme #services h2 {
+    background: linear-gradient(to right, #d97706, #c2410c); /* Darker yellow to orange */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+body.light-theme .service-card {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+body.light-theme .service-card:hover {
+    box-shadow: 0 10px 20px rgba(0, 150, 150, 0.1); /* Slightly less intense cyan glow */
+}
+
+body.light-theme .service-card h3 {
+    color: #222; /* Darker text for service card titles */
+}
+
+body.light-theme .service-card p {
+    color: #666; /* Darker text for service card descriptions */
+}
+
+/* Individual service card text colors for light theme */
+body.light-theme .service-card:nth-child(1) h3 { color: #2563eb; } /* Darker blue */
+body.light-theme .service-card:nth-child(2) h3 { color: #7e22ce; } /* Darker purple */
+body.light-theme .service-card:nth-child(3) h3 { color: #0d9488; } /* Darker teal */
+body.light-theme .service-card:nth-child(4) h3 { color: #dc2626; } /* Darker red */
+body.light-theme .service-card:nth-child(5) h3 { color: #16a34a; } /* Darker green */
+body.light-theme .service-card:nth-child(6) h3 { color: #4f46e5; } /* Darker indigo */
+
+body.light-theme #contact h2 {
+    background: linear-gradient(to right, #be185d, #b91c1c); /* Darker pink to red */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+body.light-theme #contact .contact-info p,
+body.light-theme #contact ul {
+    color: #555;
+}
+
+body.light-theme #contact ul li:nth-child(1) svg { color: #2563eb; }
+body.light-theme #contact ul li:nth-child(2) svg { color: #7e22ce; }
+body.light-theme #contact ul li:nth-child(3) svg { color: #0d9488; }
+
+body.light-theme #contact ul li a {
+    color: #555;
+}
+
+body.light-theme #contact ul li a:hover {
+    color: #2563eb; /* Darker blue hover */
+}
+
+body.light-theme #contact form label {
+    color: #333;
+}
+
+body.light-theme #contact form input,
+body.light-theme #contact form textarea {
+    background-color: #ffffff;
+    border: 1px solid #d1d5db; /* Light gray border */
+    color: #333; /* Input text color in light theme */
+}
+
+body.light-theme #contact form input::placeholder,
+body.light-theme #contact form textarea::placeholder {
+    color: #a0a0a0;
+}
+
+body.light-theme #contact form input:focus,
+body.light-theme #contact form textarea:focus {
+    border-color: #2563eb; /* Darker blue focus */
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.3);
+}
+
+body.light-theme #contact form button {
+    background: linear-gradient(to right, #1e40af, #6d28d9); /* Darker blue to purple */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+body.light-theme #contact form button:hover {
+    background: linear-gradient(to right, #1a338a, #5c1eaf); /* Even darker hover */
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+body.light-theme footer {
+    color: #888;
+}
+
+
+/* Animated Background */
+.animated-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2; /* Behind the overlay */
+    background: linear-gradient(45deg, #0f0f0f, #1a1a1a, #0f0f0f, #1a1a1a);
+    background-size: 400% 400%;
+    animation: gradientAnimation 15s ease infinite;
+    filter: blur(2px); /* Soften the background */
+    opacity: 0.7;
+    transition: background 0.5s ease, filter 0.5s ease, opacity 0.5s ease;
+}
+
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 100%; /* Cover content height */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    box-sizing: border-box;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: -1; /* Above the animated background, below content */
+    padding-bottom: 50px; /* Space for footer */
+    transition: background 0.5s ease;
+}
+
+/* Container for content */
+.content-wrapper {
+    position: relative;
+    z-index: 1; /* Ensure content is above overlay */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    box-sizing: border-box;
+    max-width: 1200px; /* Limit overall content width */
+    margin: 0 auto;
+}
+
+/* Navigation Bar */
+.navbar {
+    width: 95%;
+    padding: 1rem;
+    border-radius: 1rem; /* rounded-xl */
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2); /* shadow-lg */
+    margin-bottom: 2rem;
+    position: sticky;
+    top: 1rem; /* sticky top-0 with some margin */
+    z-index: 10;
+    display: flex; /* Make it a flex container */
+    justify-content: space-between; /* Space out items */
+    align-items: center; /* Align items vertically */
+}
+
+.navbar ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 1rem; /* space-x-4 */
+}
+
+.navbar ul li a {
+    padding: 0.75rem 1rem; /* p-2, adjust for better click area */
+    border-radius: 0.375rem; /* rounded-md */
+    text-decoration: none;
+    font-weight: 600; /* font-semibold */
+    font-size: 1.125rem; /* text-lg */
+    transition: color 0.3s ease; /* transition-colors duration-300 */
+}
+
+/* Theme Toggle Button */
+#theme-toggle {
+    background: linear-gradient(to right, #2563eb, #7c3aed);
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 9999px;
+    border: none;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    white-space: nowrap; /* Prevent text wrapping */
+}
+
+#theme-toggle:hover {
+    background: linear-gradient(to right, #1d4ed8, #6d28d9);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#theme-toggle svg {
+    width: 1.2rem;
+    height: 1.2rem;
+}
+
+
+/* Section Styling */
+section {
+    padding: 2rem;
+    border-radius: 1rem; /* rounded-2xl */
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2); /* shadow-xl */
+    width: 95%;
+    max-width: 768px; /* max-w-4xl, converted to px */
+    margin: 0 auto 3rem auto; /* mx-4 mb-12 */
+    box-sizing: border-box;
+    transition: background-color 0.5s ease, border 0.5s ease, box-shadow 0.5s ease;
+}
+
+/* Home Section */
+#home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+/* In your style.css file */
+
+.logo-svg {
+    /* Existing styles for the circular container */
+    width: 7rem;
+    height: 7rem;
+    margin: 0 auto 1.5rem auto;
+    padding: 0.5rem;
+    border-radius: 9999px; /* Makes the container circular */
+    background: linear-gradient(to bottom right, #3b82f6, #9333ea);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.logo-svg img {
+    width: 100%; /* Make the image take up 100% width of its parent (.logo-svg) */
+    height: 100%; /* Make the image take up 100% height of its parent (.logo-svg) */
+    object-fit: cover; /* This is the crucial part: it covers the area, cropping if necessary */
+    border-radius: 9999px; /* Apply border-radius to the image itself to make it circular */
+    display: block; /* Removes any extra space below the image */
+}
+
+
+h1 {
+    font-size: 3.5rem; /* text-5xl */
+    font-weight: 800; /* font-extrabold */
+    margin-bottom: 1rem;
+    background: linear-gradient(to right, #60a5fa, #a855f7); /* from-blue-400 to-purple-500 */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent; /* Fallback for browsers not supporting text clipping */
+    border-radius: 0.5rem; /* rounded-lg */
+}
+
+#home p {
+    font-size: 1.25rem; /* text-lg */
+    margin-bottom: 1.5rem;
+    line-height: 1.6; /* leading-relaxed */
+}
+
+#home .location-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem; /* space-y-2 */
+    font-size: 1rem; /* text-md */
+}
+
+#home .location-info span {
+    display: flex;
+    align-items: center;
+}
+
+#home .location-info svg {
+    height: 1.25rem; /* h-5 */
+    width: 1.25rem; /* w-5 */
+    margin-right: 0.5rem;
+}
+
+/* About Us Section */
+h2 {
+    font-size: 2.25rem; /* text-4xl */
+    font-weight: 700; /* font-bold */
+    margin-bottom: 1.5rem;
+    text-align: center;
+    background: linear-gradient(to right, #4ade80, #2dd4bf); /* from-green-400 to-teal-500 */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+}
+
+#about .about-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem; /* space-x-8 for md */
+}
+
+#about img {
+    display: none; /* Hidden on all screen sizes */
+}
+
+#about p {
+    font-size: 1.125rem; /* text-lg */
+    line-height: 1.6; /* leading-relaxed */
+    margin-bottom: 1rem;
+}
+
+/* Services Section */
+#services h2 {
+    background: linear-gradient(to right, #fbbf24, #f97316); /* from-yellow-400 to-orange-500 */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+}
+
+#services .service-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* grid-cols-1 */
+    gap: 2rem; /* gap-8 */
+}
+
+.service-card {
+    padding: 1.5rem;
+    border-radius: 0.75rem; /* rounded-xl */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* shadow-md */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, background-color 0.5s ease, border 0.5s ease;
+    text-align: center;
+}
+
+.service-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 15px 30px rgba(0, 255, 255, 0.2); /* Cyan glow */
+}
+
+.service-card img {
+    width: 100%;
+    height: 10rem; /* h-40 */
+    object-fit: cover;
+    border-radius: 0.5rem; /* rounded-lg */
+    margin-bottom: 1rem;
+}
+
+.service-card h3 {
+    font-size: 1.5rem; /* text-2xl */
+    font-weight: 600; /* font-semibold */
+    margin-bottom: 0.5rem;
+}
+
+/* Contact Section */
+#contact {
+    max-width: 100%; /* Make contact section full width */
+}
+
+#contact h2 {
+    background: linear-gradient(to right, #f472b6, #ef4444); /* from-pink-400 to-red-500 */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+}
+
+#contact .contact-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem; /* space-x-8 */
+}
+
+#contact .contact-info {
+    width: 100%;
+}
+
+#contact .contact-info p {
+    font-size: 1.125rem; /* text-lg */
+    line-height: 1.6; /* leading-relaxed */
+    margin-bottom: 1.5rem;
+}
+
+#contact ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem; /* space-y-4 */
+    font-size: 1.125rem; /* text-lg */
+    margin-bottom: 2rem;
+}
+
+#contact ul li {
+    display: flex;
+    align-items: center;
+}
+
+#contact ul li svg {
+    height: 1.5rem; /* h-6 */
+    width: 1.5rem; /* w-6 */
+    margin-right: 0.75rem;
+}
+
+#contact ul li:nth-child(1) svg { color: #60a5fa; /* blue-400 */ }
+#contact ul li:nth-child(2) svg { color: #a855f7; /* purple-400 */ }
+#contact ul li:nth-child(3) svg { color: #2dd4bf; /* teal-400 */ }
+
+#contact ul li a {
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+#contact ul li a:hover {
+    color: #93c5fd; /* blue-300 */
+}
+
+/* Contact Form */
+#contact form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem; /* space-y-4 */
+}
+
+#contact form div {
+    margin-bottom: 0.5rem;
+}
+
+#contact form label {
+    display: block;
+    font-size: 0.875rem; /* text-sm */
+    font-weight: 700; /* font-bold */
+    margin-bottom: 0.5rem;
+}
+
+#contact form input,
+#contact form textarea {
+    appearance: none;
+    border-radius: 0.5rem; /* rounded-lg */
+    width: 100%;
+    padding: 0.5rem 0.75rem; /* py-2 px-3 */
+    line-height: 1.5; /* leading-tight */
+    outline: none;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05); /* shadow */
+    transition: border-color 0.3s ease, background-color 0.5s ease, color 0.5s ease;
+}
+
+#contact form button {
+    background: linear-gradient(to right, #2563eb, #7c3aed); /* from-blue-600 to-purple-700 */
+    color: #fff;
+    font-weight: 700; /* font-bold */
+    padding: 0.5rem 1.5rem; /* py-2 px-6 */
+    border-radius: 9999px; /* rounded-full */
+    outline: none;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease; /* transition-all duration-300 */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* shadow-lg */
+}
+
+#contact form button:hover {
+    background: linear-gradient(to right, #1d4ed8, #6d28d9); /* hover:from-blue-700 hover:to-purple-800 */
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Footer */
+footer {
+    width: 100%;
+    text-align: center;
+    font-size: 0.875rem; /* text-sm */
+    padding: 2rem 0; /* py-8 */
+    transition: color 0.5s ease;
+}
+
+/* Responsive Adjustments (Media Queries) */
+@media (min-width: 768px) { /* md breakpoint */
+    .navbar ul {
+        gap: 2rem; /* md:space-x-8 */
+    }
+
+    .navbar ul li a {
+        font-size: 1.25rem; /* md:text-xl */
+    }
+
+    h1 {
+        font-size: 4rem; /* md:text-6xl */
+    }
+
+    #home p {
+        font-size: 1.25rem; /* md:text-xl */
+    }
+
+    #home .location-info {
+        flex-direction: row;
+        gap: 2rem; /* md:space-x-8 */
+        font-size: 1.125rem; /* md:text-lg */
+    }
+
+    #about .about-content {
+        flex-direction: row;
+    }
+
+    #about img {
+        display: none; /* Hidden on all screen sizes */
+    }
+
+    #about .text-content {
+        width: 100%; /* Make text content full width when image is hidden */
+    }
+
+    #services .service-grid {
+        grid-template-columns: 1fr 1fr; /* md:grid-cols-2 */
+    }
+
+    #contact .contact-content {
+        flex-direction: row;
+    }
+
+    #contact .contact-info {
+        width: 100%; /* Make contact info full width */
+    }
+    .navbar {
+        justify-content: space-between; /* Ensure space between nav links and button */
+    }
+    .navbar ul {
+        justify-content: flex-start; /* Align nav links to the left */
+    }
+}
+
+@media (min-width: 1024px) { /* lg breakpoint */
+    #services .service-grid {
+        grid-template-columns: 1fr 1fr 1fr; /* lg:grid-cols-3 */
+    }
+
+    #gallery .gallery-grid {
+        grid-template-columns: 1fr 1fr 1fr; /* lg:grid-cols-3 */
+    }
+}
+
+/* Fade-in on scroll effect */
+.fade-in-section {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+.fade-in-section.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
